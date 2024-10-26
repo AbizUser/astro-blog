@@ -28,7 +28,6 @@ body {
   margin-bottom: 10px;
 }
 
-
 .nav-links {
   width: 100%;
   top: 5rem;
@@ -69,5 +68,7 @@ body {
     display: inline-block;
     padding: 15px 20px;
   }
+
+  
 }
 

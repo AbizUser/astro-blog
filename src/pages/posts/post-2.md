@@ -7,7 +7,7 @@ author: "ShinCode"
 image:
   url: "https://docs.astro.build/asset/full-logo-light.png"
   alt: "Astroのロゴ"
-tags: ["astro", "blog", "programming"]
+tags: ["astro", "blog"]
 ---
 
 Astroの学習について** Astro 入門2 **
