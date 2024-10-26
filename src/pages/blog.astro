@@ -1,5 +1,5 @@
 ---
-const pageTitle = "Astro Blog"
+
 ---
 
 <html lang="ja">
@@ -8,14 +8,18 @@ const pageTitle = "Astro Blog"
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
+		<title>Astro Blog</title>
 	</head>
 	<body>
     <a href="/">Home</a>
     <a href="/about">About</a>
     <a href="/blog">Blog</a>
-		<h1>{pageTitle}</h1>
-		<h2>Astroフレームワークを使用して高速で動作するブログです。</h2>
-    <p>これは練習用のサイトです。</p>
+		<h1>ブログ投稿</h1>
+		<h2>このページは今後学習していく内容をポストしていきます。</h2>
+    <ul>
+      <li><a>href="./posts/post-1"</a>記事1</li>
+      <li><a>href="./posts/post-2"</a>記事2</li>
+      <li><a>href="./posts/post-3"</a>記事3</li>
+    </ul>
 	</body>
 </html>
