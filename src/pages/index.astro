@@ -1,26 +1,8 @@
 ---
-import Footer from "../components/Footer.astro"
-import Header from "../components/Header.astro"
-import "../styles/global.css"
-
+import BaseLauout from "../layouts/BaseLayout.astro"
+const pageTitle = "Astro Blog"
 ---
 
-<html lang="ja">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-    <Header />
-		<h1>Astro Blog</h1>
-		<Footer />
-		<script>
-			document.querySelector(".hamburger")?.addEventListener("click", () => {
-				document.querySelector(".nav-links")?.classList.toggle("expanded");
-			})
-		</script>
-	</body>
-</html>
+<BaseLauout pageTitle={pageTitle}>
+	<h2>ブログのサブタイトル</h2>
+</BaseLauout_>

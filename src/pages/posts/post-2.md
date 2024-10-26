@@ -1,10 +1,19 @@
-# 私の２回目のブログ記事
+---
+layout: ../../layouts/MarkdownPostLayout.astro
+title: "私の最初のブログ記事"
+pubDate: "2022-12-21"
+description: "これは私の2番目の…"
+author: "ShinCode"
+image:
+  url: "https://docs.astro.build/asset/full-logo-light.png"
+  alt: "Astroのロゴ"
+tags: ["astro", "blog", "programming"]
+---
 
-投稿日：2022-12-21 
-
-Astroの学習について** Astro 入門 **
+Astroの学習について** Astro 入門2 **
 
 ## 達成項目
+
 1. **Astro　のインストール**　：まず、…
 2. **Astro　のインストール**　：まず、…`.astro`ファイルの作成と`src/pages/`フォルダへ配置
 3. **Astro　のインストール**　：まず、…

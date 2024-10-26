@@ -1,9 +1,8 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import BaseLauout from "../layouts/BaseLayout.astro";
 
 import "../styles/global.css"
-const pageTitle = "Astro Blog"
+const pageTitle = "About Blog"
 
 const identity = {
   nam: "",
@@ -31,17 +30,8 @@ const textCase = "uppercase";
   }
 </style>
 
-<html lang="ja">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-    <Header />
-		<h1>{pageTitle}</h1>
+<BaseLauout pageTitle{pageTitle}>
+		<!-- <h1>{pageTitle}</h1> -->
 		<h2>Astroフレームワークを使用して高速で動作するブログです。</h2>
     <p>私について</p>
     <ul>
@@ -59,11 +49,4 @@ const textCase = "uppercase";
     <p>私のスキル</p>
     <ul>{skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
-    <Footer />
-    <script>
-			document.querySelector(".hamburger")?.addEventListener("click", () => {
-				document.querySelector(".nav-links")?.classList.toggle("expanded");
-			})
-		</script>
-	</body>
-</html>
+</BaseLauout>
