@@ -1,4 +1,7 @@
 ---
+import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro"
+import "../styles/global.css"
 
 ---
 
@@ -11,9 +14,7 @@
 		<title>Astro Blog</title>
 	</head>
 	<body>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
+		<Header />
 		<h1>ブログ投稿</h1>
 		<h2>このページは今後学習していく内容をポストしていきます。</h2>
     <ul>
@@ -21,5 +22,11 @@
       <li><a>href="./posts/post-2"</a>記事2</li>
       <li><a>href="./posts/post-3"</a>記事3</li>
     </ul>
+		<Footer />
+		<script>
+			document.querySelector(".hamburger")?.addEventListener("click", () => {
+				document.querySelector(".nav-links")?.classList.toggle("expanded");
+			})
+		</script>
 	</body>
 </html>

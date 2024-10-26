@@ -1,6 +1,35 @@
 ---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+import "../styles/global.css"
 const pageTitle = "Astro Blog"
+
+const identity = {
+  nam: "",
+  country: "",
+  occupation: "",
+  hobbies: ["コーディング", "ジム", "読書"]
+}
+
+const skills = ["HTML","CSS","GA  S","RPA","C#","JS","Python"]
+
+const skillColor = "green";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
+
+<style define:vars={{skillColor, fontWeight, textCase}}>
+  h1 {
+    color:purple;
+    font-size: 3rem;
+  }
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>
 
 <html lang="ja">
 	<head>
@@ -11,11 +40,30 @@ const pageTitle = "Astro Blog"
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
+    <Header />
 		<h1>{pageTitle}</h1>
 		<h2>Astroフレームワークを使用して高速で動作するブログです。</h2>
-    <p>これは練習用のサイトです。</p>
+    <p>私について</p>
+    <ul>
+      <li>私の名前は{identity.nam}</li>
+      <li>私は{identity.country}に住んでいます。職業は{identity.occupation}です</li>
+      <li>私の名前は{identity.nam}</li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            私の趣味は2つあって{identity.hobbies[0]}と{identity.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+    <p>私のスキル</p>
+    <ul>{skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+    <Footer />
+    <script>
+			document.querySelector(".hamburger")?.addEventListener("click", () => {
+				document.querySelector(".nav-links")?.classList.toggle("expanded");
+			})
+		</script>
 	</body>
 </html>
