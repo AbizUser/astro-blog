@@ -1,14 +1,15 @@
 ---
-import Greeting from "../components/Greeting"
-import BaseLauout from "../layouts/BaseLayout.astro"
-const pageTitle = "Astro Blog"
-//FrontMatterと呼び、ここの記述はサーバー側で実装される。
----
+import { fade, ViewTransitions } from "astro:transitions";
+import Greeting from "../components/Greeting";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Astro Blog";
 
-<BaseLauout pageTitle={pageTitle}>
-	<h2>ブログのサブタイトル</h2>
-	<Greeting
-	  client:load
-	  messages={["こんにちは！","Hola!","Hello!"]} 
-	/>
-</BaseLayout_>
+---
+<ViewTransitions />
+<BaseLayout pageTitle={pageTitle}>
+  <h2>ブログのサブタイトル</h2>
+  <Greeting
+    client:load
+    messages={["こんにちは", "どうも", "初めまして", "ようこそ"]}
+  />
+</BaseLayout>

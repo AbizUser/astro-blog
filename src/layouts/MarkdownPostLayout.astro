@@ -1,11 +1,12 @@
 ---
 const { frontmatter } = Astro.props;
-import BaseLayout from "./BaseLayout.astro";
+import { fade } from "astro:transitions";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <style>
   a {
-    color: #00639f;
+    color: #00539f;
   }
   .tags {
     display: flex;
@@ -21,11 +22,13 @@ import BaseLayout from "./BaseLayout.astro";
   }
 </style>
 
-<BaseLayout>
-  <p>{frontmatter.pubDate.slice(0, 10)}</p>
-  <p><em>{frontmatter.description}</em></p>
-  <p>執筆者：{frontmatter.auther}</p>
-  <img src={frontmatter.image.url} alt="frontmatter.alt" />
+<BaseLayout pageTitle={frontmatter.title}>
+  <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+  <p>
+    <em>{frontmatter.description}</em>
+  </p>
+  <p>執筆者:{frontmatter.author}</p>
+  <img src={frontmatter.image.url} alt={frontmatter.alt} />
   <slot />
   <div class="tags">
     {
